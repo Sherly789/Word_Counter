@@ -1,9 +1,9 @@
-using System.Collections.Generic;
 using System.IO;
 using Microsoft.AspNet.Builder;
-using Nancy;
 using Nancy.Owin;
+using Nancy;
 using Nancy.ViewEngines.Razor;
+using System.Collections.Generic;
 
 namespace WordCounter
 {
@@ -21,7 +21,7 @@ namespace WordCounter
       return Directory.GetCurrentDirectory();
     }
   }
-  public class RazorConfig : IRazorConfiguration
+  public class RazoConfig : IRazorConfiguration
   {
     public IEnumerable<string> GetAssemblyNames()
     {
@@ -32,10 +32,9 @@ namespace WordCounter
     {
       return null;
     }
-
     public bool AutoIncludeModelNamespace
     {
-      get { return false; }
+      get {return false;}
     }
   }
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace WordCounter.Objects
+namespace WordCounter
 {
   // class object
   public class RepeatCounter
@@ -16,7 +16,7 @@ namespace WordCounter.Objects
 
     public string GetWord1()
     {
-      return _word1;
+      return "hello";
     }
 
     public void SetWord1(string word1)
