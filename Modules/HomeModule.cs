@@ -1,6 +1,5 @@
 using Nancy;
 
-
 namespace WordCounter
 {
   public class HomeModule : NancyModule

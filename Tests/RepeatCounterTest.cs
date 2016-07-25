@@ -29,8 +29,6 @@ namespace WordCounter
       Assert.Equal(phrase, testphrase );
     }
 
-
-
     [Fact]
     public void  CountRepeats_CountWordRepeatation_true()
     {
@@ -38,11 +36,8 @@ namespace WordCounter
       string word = "really";
       RepeatCounter testNewWord = new RepeatCounter(word, phrase);
       int wordCount = testNewWord.CountRepeats();
+
       Assert.Equal(2, wordCount);
     }
-
-
-
-
   }
 }
