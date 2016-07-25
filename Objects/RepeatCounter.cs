@@ -40,8 +40,13 @@ namespace WordCounter
     //other methods
     public int CountRepeats()
     {
-      string[] splitPhrase = this._phrase.ToLower().Split(' ');
-      string newWord1 = this._word1.ToLower();
+      string[] splitPhrase = this._phrase.ToLower().Trim().Split(' ');
+      string newWord1 = this._word1.Trim().ToLower();
+      if (this._word1 == "")
+      {
+        return 0;
+      }
+
       int count = 0;
       foreach (string word in splitPhrase)
     	{
@@ -52,6 +57,5 @@ namespace WordCounter
     	}
       return count;
     }
-
   }
 }
