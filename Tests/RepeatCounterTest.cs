@@ -27,5 +27,16 @@ namespace WordCounter
       Assert.Equal(word1, testWord1);
       Assert.Equal(word2, testWord2);
     }
+
+    [Fact]
+    public void CompareWord_TwoWordCompare_true()
+    {
+      string word1 = "hello";
+      string word2 = "hello";
+      RepeatCounter testNewWord = new RepeatCounter(word1, word2);
+      string CompareWord = testNewWord.CompareWord(word1, word2);
+      Assert.Equal("Two words are the same", CompareWord);
+    }
+
   }
 }
