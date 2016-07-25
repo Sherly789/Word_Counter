@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter
 {
@@ -7,18 +8,18 @@ namespace WordCounter
   {
     //properties
     private string _word1;
-    private string _word2;
+    private string _phrase;
 
     //constructors, getters and setters
-    public RepeatCounter(string word1, string word2)
+    public RepeatCounter(string word1, string phrase)
     {
       _word1 = word1;
-      _word2 = word2;
+      _phrase = phrase;
     }
 
     public string GetWord1()
     {
-      return "hello";
+      return _word1;
     }
 
     public void SetWord1(string word1)
@@ -26,28 +27,31 @@ namespace WordCounter
       _word1 = word1;
     }
 
-    public string GetWord2()
+    public string GetPhrase()
     {
-      return "hi";
+      return _phrase;
     }
 
-    public void SetWord2(string word2)
+    public void SetPhrase(string phrase)
     {
-      _word2 = word2;
+      _phrase = phrase;
     }
+
     //other methods
-    public string CompareWord(string word1, string word2)
+    public int CountRepeats()
     {
-      string newWord1 = word1.ToLower();
-      string newWord2 = word2.ToLower();
-      if (newWord1 == newWord2)
-      {
-        return "Two words are the same";
-      }
-      else
-      {
-        return "Two words are diffrent";
-      }
+      string[] splitPhrase = this._phrase.ToLower().Split(' ');
+      string newWord1 = this._word1.ToLower();
+      int count = 0;
+      foreach (string word in splitPhrase)
+    	{
+  	    if (word == newWord1)
+        {
+          count++;
+        }
+    	}
+      return count;
     }
+
   }
 }

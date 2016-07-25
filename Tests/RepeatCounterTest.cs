@@ -1,42 +1,48 @@
 using Xunit;
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter
 {
   public class RepeatCounterTest
   {
-    // [Fact]
-    // public void GetWord_OneWordInput_true()
-    // {
-    //   string word1 = "hello";
-    //   RepeatCounter testNewWord = new RepeatCounter(word1);
-    //   string  testWord1 = testNewWord.GetWord1();
-    //
-    //   Assert.Equal(word1, testWord1);
-    // }
-
     [Fact]
-    public void GetWord_TwoWordInput_true()
+    public void GetWord_OneWordInput_true()
     {
       string word1 = "hello";
-      string word2 = "hi";
-      RepeatCounter testNewWord = new RepeatCounter(word1, word2);
+      RepeatCounter testNewWord = new RepeatCounter(word1,"");
       string  testWord1 = testNewWord.GetWord1();
-      string testWord2 = testNewWord.GetWord2();
 
       Assert.Equal(word1, testWord1);
-      Assert.Equal(word2, testWord2);
     }
 
     [Fact]
-    public void CompareWord_TwoWordCompare_true()
+    public void GetWordandphrase_OnewordandOnePhraseInput_true()
     {
       string word1 = "hello";
-      string word2 = "hello";
-      RepeatCounter testNewWord = new RepeatCounter(word1, word2);
-      string CompareWord = testNewWord.CompareWord(word1, word2);
-      Assert.Equal("Two words are the same", CompareWord);
+      string phrase = "This is a cat";
+      RepeatCounter testNewWord = new RepeatCounter(word1, phrase);
+      string  testWord1 = testNewWord.GetWord1();
+      string testphrase = testNewWord.GetPhrase();
+
+      Assert.Equal(word1, testWord1);
+      Assert.Equal(phrase, testphrase );
     }
+
+
+
+    [Fact]
+    public void  CountRepeats_CountWordRepeatation_true()
+    {
+      string phrase = "We are going really really fast";
+      string word = "really";
+      RepeatCounter testNewWord = new RepeatCounter(word, phrase);
+      int wordCount = testNewWord.CountRepeats();
+      Assert.Equal(2, wordCount);
+    }
+
+
+
 
   }
 }
