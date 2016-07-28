@@ -83,6 +83,16 @@ namespace WordCounter
       Assert.Equal(2, wordCount);
     }
 
+    [Fact]
+    public void GetWord_NotCountEmptySpaceInPhrase_true()
+    {
+      string word1 = " ";
+      string phrase = "hi  Shokouh";
+      RepeatCounter testNewWord = new RepeatCounter(word1,phrase);
+      int wordCount = testNewWord.CountRepeats();
+
+      Assert.Equal(0, wordCount);
+    }
 
 
 

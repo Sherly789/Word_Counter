@@ -16,7 +16,7 @@
 | A word not match a word in phrase| "hi Shokouh", "bye"|0|
 |A word repeat two times in phrase| "really really fast"|2|
 | A space not count as a word in phrase| "hi " " Shokouh"," "|0|
-
+| phrase and word not case sensitive| "Hi Shokouh", "hi"|1|
 
 
 * Clone this repository, and on your computer, run "DNU restore" at the PowerShell prompt in the top directory of the cloned repository. Then type in "DNX Kestrel" at the same prompt and a local instance of the kestrel server will boot. Navigate in your browser to "LocalHost:5004" to view the homepage.
