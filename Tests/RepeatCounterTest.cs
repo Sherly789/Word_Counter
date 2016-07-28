@@ -72,6 +72,17 @@ namespace WordCounter
       Assert.Equal(0, wordCount);
     }
 
+    [Fact]
+    public void GetWord_TowWordNotMatchInPhrase_true()
+    {
+      string word1 = "really";
+      string phrase = "really really fast";
+      RepeatCounter testNewWord = new RepeatCounter(word1,phrase);
+      int wordCount = testNewWord.CountRepeats();
+
+      Assert.Equal(2, wordCount);
+    }
+
 
 
 
