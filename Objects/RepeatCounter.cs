@@ -40,6 +40,12 @@ namespace WordCounter
     //other methods
     public int CountRepeats()
     {
+      if (this._word1 == this._phrase)
+      {
+        return 1;
+      } else {
+        return 0;
+      }
       // string[] splitPhrase = this._phrase.ToLower().Trim().Split(' ');
       // string newWord1 = this._word1.Trim().ToLower();
       // if (this._word1 == "")
@@ -55,7 +61,7 @@ namespace WordCounter
       //     count++;
       //   }
     	// }
-      return 1;
+
     }
   }
 }

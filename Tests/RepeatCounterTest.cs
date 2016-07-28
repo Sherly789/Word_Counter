@@ -17,6 +17,17 @@ namespace WordCounter
       Assert.Equal(1, wordCount);
     }
 
+    [Fact]
+    public void GetWord_OneLetterNotMatch_true()
+    {
+      string word1 = "a";
+      string word2 = "b";
+      RepeatCounter testNewWord = new RepeatCounter(word1,word2);
+      int wordCount = testNewWord.CountRepeats();
+
+      Assert.Equal(0, wordCount);
+    }
+
 
 
     // [Fact]
