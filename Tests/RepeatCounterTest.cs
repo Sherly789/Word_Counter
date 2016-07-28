@@ -28,6 +28,17 @@ namespace WordCounter
       Assert.Equal(0, wordCount);
     }
 
+    [Fact]
+    public void GetWord_TwoLetterNotMatch_true()
+    {
+      string word1 = "ab";
+      string word2 = "ab";
+      RepeatCounter testNewWord = new RepeatCounter(word1,word2);
+      int wordCount = testNewWord.CountRepeats();
+
+      Assert.Equal(1, wordCount);
+    }
+
 
 
     // [Fact]
