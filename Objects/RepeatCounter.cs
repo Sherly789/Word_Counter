@@ -46,7 +46,6 @@ namespace WordCounter
       {
         return 0;
       }
-
       int count = 0;
       foreach (string word in splitPhrase)
     	{
@@ -57,10 +56,5 @@ namespace WordCounter
     	}
       return count;
     }
-
-
-
-
-
   }
 }
