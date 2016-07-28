@@ -50,6 +50,19 @@ namespace WordCounter
       Assert.Equal(0, wordCount);
     }
 
+    [Fact]
+    public void GetWord_AWordMatchInPhrase_true()
+    {
+      string word1 = "hi";
+      string phrase = "hi Shokouh";
+      RepeatCounter testNewWord = new RepeatCounter(word1,phrase);
+      int wordCount = testNewWord.CountRepeats();
+
+      Assert.Equal(1, wordCount);
+    }
+
+
+
 
     // [Fact]
     // public void GetWord_OneWordInput_true()
